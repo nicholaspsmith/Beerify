@@ -24,22 +24,19 @@ class RecipesList extends Component {
     const filters = this.props.filters;
     const recipes = this.props.recipes;
 
-    var result = recipes.filter( recipe => {
-      filters.filter( f => {
-        return recipe.ingredients.indexOf(f) > -1
-      })
-    });
+    const filteredRecipes = recipes.map( recipe => {
+      var result = filters.filter(function(fs) {
+        return recipe.ingredients.some(function(ff) { return fs.indexOf(ff) > -1 });
+      });
+      if (result.length === filters.length) {
+        return recipe;
+      }
+    }).filter( r => typeof r !== 'undefined')
 
-    console.log(result);
-
-    // result => an array of recipes
-
-
-
-    if (this.props.filters.length > 0) {
-      return <div>In prog</div>;
+    if (filteredRecipes.length === 0) {
+      return <h3>No Results Found</h3>
     }
-    return this.props.recipes.map(this.renderRecipe)
+    return filteredRecipes.map(this.renderRecipe)
   }
 
   handleSelect() {
@@ -48,13 +45,13 @@ class RecipesList extends Component {
 
   renderRecipe(recipe) {
     return (
-        <Panel>
+        <Panel key={recipe.id}>
           <Media>
             <Media.Left align="middle">
               <img width={64} height={64} src={recipe.imageUrl} alt="Image"/>
             </Media.Left>
             <Media.Body>
-              <Link to={"/" + recipe.id} key={recipe.id}>
+              <Link to={"/beers/" + recipe.id} key={recipe.id}>
                 <Media.Heading>{recipe.name}</Media.Heading>
                 {recipe.ingredients.join(", ")}
               </Link>
@@ -72,7 +69,7 @@ class RecipesList extends Component {
       <Panel header="Beer List">
       <Nav bsStyle="pills" activeKey={1} onSelect={this.handleSelect}>
         <ul className="nav navbar-nav navbar-right">
-          <li><Link className="addButton" href="/beers/new"><span>+</span></Link></li>
+          <li><Link className="addButton" to="/beers/new"><span>+</span></Link></li>
         </ul>
       </Nav>
         {this.filterAndRenderRecipes()}

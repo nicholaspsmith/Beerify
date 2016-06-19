@@ -18,3 +18,8 @@
   top: 12px;
   left: 13px;
 }
+
+.navbar-form .form-control.search-bar {
+  width: 440px;
+  margin-left: 140px;
+}
