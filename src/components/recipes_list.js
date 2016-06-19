@@ -24,7 +24,13 @@ class RecipesList extends Component {
     const filters = this.props.filters;
     const recipes = this.props.recipes;
 
-    const filteredRecipes = recipes.map( recipe => {
+    const searchedRecipes = recipes.map( recipe => {
+      if (recipe.name.toLowerCase().indexOf(this.props.searchTerm.toLowerCase()) > -1) {
+        return recipe;
+      }
+    }).filter( r => typeof r !== 'undefined')
+
+    const filteredRecipes = searchedRecipes.map( recipe => {
       var result = filters.filter(function(fs) {
         return recipe.ingredients.some(function(ff) { return fs.indexOf(ff) > -1 });
       });
@@ -37,10 +43,6 @@ class RecipesList extends Component {
       return <h3>No Results Found</h3>
     }
     return filteredRecipes.map(this.renderRecipe)
-  }
-
-  handleSelect() {
-    console.log('todo');
   }
 
   renderRecipe(recipe) {
@@ -67,11 +69,11 @@ class RecipesList extends Component {
     }
     return (
       <Panel header="Beer List">
-      <Nav bsStyle="pills" activeKey={1} onSelect={this.handleSelect}>
-        <ul className="nav navbar-nav navbar-right">
-          <li><Link className="addButton" to="/beers/new"><span>+</span></Link></li>
-        </ul>
-      </Nav>
+        <Nav className="plus-button-nav" bsStyle="pills" activeKey={1}>
+          <ul className="nav navbar-nav">
+            <li><Link className="btn btn-default" to="/beers/new"><span>+</span></Link></li>
+          </ul>
+        </Nav>
         {this.filterAndRenderRecipes()}
       </Panel>
     );
@@ -81,7 +83,8 @@ class RecipesList extends Component {
 function mapStateToProps(state) {
   return {
     recipes: state.recipes,
-    filters: state.filters
+    filters: state.filters,
+    searchTerm: state.searchTerm
   }
 }
 

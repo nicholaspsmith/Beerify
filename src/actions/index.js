@@ -2,7 +2,8 @@ import {
   FETCH_INGREDIENTS,
   FETCH_RECIPES,
   ADD_INGREDIENT_TO_FILTER,
-  REMOVE_INGREDIENT_FROM_FILTER
+  REMOVE_INGREDIENT_FROM_FILTER,
+  SEARCH_TERM
 } from './types';
 
 // import axios from 'axios'
@@ -13,22 +14,22 @@ export function fetchIngredients() {
   return {
     type: FETCH_INGREDIENTS,
     payload: [
-      { name: 'Hops' },
-      { name: 'Barley' },
-      { name: 'Oats' },
-      { name: 'Water' },
-      { name: 'Dry Malt Extract' },
-      { name: 'Instant Starter Wort' },
-      { name: 'Malt' },
-      { name: 'Starter Wort' },
-      { name: 'Yeast' },
-      { name: 'Pilsner Malt' },
-      { name: 'Caramel Pils Malt' },
-      { name: 'Grain' },
-      { name: 'Cinnamon' },
-      { name: 'Vanilla Bean' },
-      { name: 'Coffee Beans' },
-      { name: 'Wheat' },
+      { id: 101, name: 'Hops' },
+      { id: 102, name: 'Barley' },
+      { id: 103, name: 'Oats' },
+      { id: 104, name: 'Water' },
+      { id: 105, name: 'Dry Malt Extract' },
+      { id: 106, name: 'Instant Starter Wort' },
+      { id: 107, name: 'Malt' },
+      { id: 108, name: 'Starter Wort' },
+      { id: 109, name: 'Yeast' },
+      { id: 1010, name: 'Pilsner Malt' },
+      { id: 1011, name: 'Caramel Pils Malt' },
+      { id: 1012, name: 'Grain' },
+      { id: 1013, name: 'Cinnamon' },
+      { id: 1014, name: 'Vanilla Bean' },
+      { id: 1015, name: 'Coffee Beans' },
+      { id: 1016, name: 'Wheat' },
     ]
   }
 }
@@ -73,3 +74,9 @@ export function removeIngredientFromFilter(ingredient, index) {
   }
 }
 
+export function enterSearchTerm(term) {
+  return {
+    type: SEARCH_TERM,
+    payload: term
+  }
+}

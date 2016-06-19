@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 import {
   Navbar,
   FormGroup,
@@ -7,24 +9,14 @@ import {
   Button
 } from 'react-bootstrap';
 
-export default class Header extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      typing: ''
-    };
-  }
-
+class Header extends Component {
   typing(e) {
-    this.setState({
-      typing: e.target.value
-    });
+    this.props.enterSearchTerm(e.target.value);
   }
 
   render() {
     return (
-      <Navbar>
+      <Navbar className="main-navbar">
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/">Beerify</Link>
@@ -34,7 +26,7 @@ export default class Header extends Component {
         <Navbar.Collapse>
           <Navbar.Form pullLeft>
             <FormGroup>
-              <FormControl onInput={this.typing.bind(this)} value={this.state.typing} type="text" placeholder="Search" className="search-bar" />
+              <FormControl onChange={this.typing.bind(this)} value={this.props.searchTerm} type="text" placeholder="Search" className="search-bar" />
             </FormGroup>
           </Navbar.Form>
         </Navbar.Collapse>
@@ -42,3 +34,11 @@ export default class Header extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    searchTerm: state.searchTerm
+  }
+}
+
+export default connect(mapStateToProps, actions)(Header);

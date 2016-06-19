@@ -28,12 +28,14 @@ class IngredientsList extends Component {
   }
 
   orderAndRenderIngredients() {
+    // sort ingredients alphabetically
+    // then render
     return this.props.ingredients.map(this.renderIngredient.bind(this))
   }
 
   renderIngredient(ingredient) {
     return (
-      <Checkbox onClick={ this.boxChecked.bind(this) } value={ingredient.name} key={ingredient.name}>{ingredient.name}</Checkbox>
+      <Checkbox onClick={ this.boxChecked.bind(this) } value={ingredient.name} key={ingredient.id}>{ingredient.name}</Checkbox>
     );
   }
 
