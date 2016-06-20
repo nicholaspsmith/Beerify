@@ -2,6 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import _ from 'lodash';
+import {
+  FormGroup,
+  ControlLabel,
+  Button,
+  FormControl
+} from 'react-bootstrap';
 
 class NewRecipe extends Component {
   static contextTypes = {
@@ -44,7 +50,7 @@ class NewRecipe extends Component {
   printInput(id) {
     return (
       <div key={id}>
-        <input onInput={this.ingredientTyped} id={id} type="text"/>
+        <FormControl onInput={this.ingredientTyped} id={id} type="text"/>
       </div>
     );
   }
@@ -117,22 +123,23 @@ class NewRecipe extends Component {
     return (
       <div className="container">
         <form onSubmit={this.createRecipe.bind(this)}>
-          <div>
-            <label>name:
-              <input type="text" onChange={this.nameInput.bind(this)} value={this.state.name}/>
-            </label>
+          <div className="container">
+            <FormGroup className="col-sm-12">
+              <ControlLabel>name:</ControlLabel>
+              <FormControl type="text" onChange={this.nameInput.bind(this)} value={this.state.name}/>
+            </FormGroup>
+            <FormGroup className="col-sm-12">
+              <ControlLabel>image url:</ControlLabel>
+              <FormControl type="text" placeholder="beer.jpg" onChange={this.imageUrlInput.bind(this)} value={this.state.imageUrl}/>
+            </FormGroup>
+            <FormGroup className="col-sm-12">
+              <ControlLabel>ingredients:</ControlLabel>
+              {_.times(this.state.ingredientInputs, this.printInput.bind(this))}
+              <Button onClick={this.incrementIngredients.bind(this)}>+</Button>
+              <Button onClick={this.decrementIngredients.bind(this)}>-</Button>
+            </FormGroup>
           </div>
-          <div>
-            <label>image url:
-              <input type="text" placeholder="beer.jpg" onChange={this.imageUrlInput.bind(this)} value={this.state.imageUrl}/>
-            </label>
-          </div>
-          <label>ingredients:
-            {_.times(this.state.ingredientInputs, this.printInput.bind(this))}
-            <button onClick={this.incrementIngredients.bind(this)}>+</button>
-            <button onClick={this.decrementIngredients.bind(this)}>-</button>
-          </label>
-          <button type="submit">Create recipe</button>
+          <Button className="pull-right" bsStyle="success" type="submit">Create recipe</Button>
         </form>
       </div>
     );
