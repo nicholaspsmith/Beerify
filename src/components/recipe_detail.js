@@ -17,9 +17,9 @@ class RecipeDetail extends Component {
 
   delete() {
     const filteredRecipes = this.props.recipes.filter( r => r.id != this.props.params.id );
-    console.log(filteredRecipes);
 
     // @TODO call remove recipe action
+    this.props.deleteRecipe(this.props.params.id);
 
     this.context.router.push('/');
   }
@@ -42,7 +42,7 @@ class RecipeDetail extends Component {
         <p>{selectedRecipe.ingredients.join(', ')}</p>
         <p>
           <Button bsStyle="danger" onClick={this.delete.bind(this)}>Delete</Button>&nbsp;
-          <Button bsStyle="default">Edit</Button>
+          { /* <Button bsStyle="default">Edit</Button> */ }
         </p>
       </Thumbnail>
     );

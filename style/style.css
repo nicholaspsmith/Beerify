@@ -14,3 +14,7 @@
 .navbar-header .navbar-brand img {
   width: 105px;
 }
+
+.main-navbar.navbar.navbar-default > .container {
+  max-width: 100%;
+}

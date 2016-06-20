@@ -10,7 +10,6 @@ export default class MainView extends Component {
     return (
       <div>
         <SearchBar />
-        <Link className="btn btn-default" to="/beers/new"><span>+</span></Link>
         <Col sm={4}>
           <IngredientsList />
         </Col>
