@@ -16,9 +16,6 @@ class RecipesList extends Component {
     // if we have some filters in our filter array,
     // then only show the recipes that contain all of them
 
-    // ["Hops","Water"] // filters
-    // [ 'Hops', 'Oats', 'Water', "Grain"] // a recipe's ingredients
-
     const filters = this.props.filters;
     const recipes = this.props.recipes;
 

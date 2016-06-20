@@ -11,6 +11,7 @@ export default function reducerRecipes(state = [], action) {
     case DELETE_RECIPE:
       return state.filter( r => r.id != action.payload )
     case CREATE_RECIPE:
+      console.log(state,action)
       return [ ...state, action.payload ]
   }
   return state;
