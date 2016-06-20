@@ -16,7 +16,7 @@ class IngredientsList extends Component {
   }
 
   componentWillMount() {
-    if (this.props.ingredients.length < 1) {
+    if (this.props.ingredients.length == 0) {
       this.props.fetchIngredients();
     }
   }

@@ -6,7 +6,8 @@ import {
   SEARCH_TERM,
   CLEAR_FILTER,
   DELETE_RECIPE,
-  CREATE_RECIPE
+  CREATE_RECIPE,
+  CREATE_INGREDIENTS
 } from './types';
 import { LOAD, SAVE } from 'redux-storage';
 
@@ -19,24 +20,24 @@ export function fetchIngredients() {
   const previousData = JSON.parse(rawStorage);
 
   const initialState = [
-    { id: 'ing1', name: 'Hops' },
-    { id: 'ing2', name: 'Barley' },
-    { id: 'ing3', name: 'Oats' },
-    { id: 'ing4', name: 'Water' },
-    { id: 'ing5', name: 'Dry Malt Extract' },
-    { id: 'ing6', name: 'Instant Starter Wort' },
-    { id: 'ing7', name: 'Malt' },
-    { id: 'ing8', name: 'Starter Wort' },
-    { id: 'ing9', name: 'Yeast' },
-    { id: 'ing10', name: 'Pilsner Malt' },
-    { id: 'ing11', name: 'Caramel Pils Malt' },
-    { id: 'ing12', name: 'Grain' },
-    { id: 'ing13', name: 'Cinnamon' },
-    { id: 'ing14', name: 'Vanilla Bean' },
-    { id: 'ing15', name: 'Coffee Beans' },
-    { id: 'ing16', name: 'Wheat' },
-    { id: 'ing17', name: 'Honey' },
-  ];
+    { id: 101, name: 'Hops' },
+    { id: 102, name: 'Barley' },
+    { id: 103, name: 'Oats' },
+    { id: 104, name: 'Water' },
+    { id: 105, name: 'Dry Malt Extract' },
+    { id: 106, name: 'Instant Starter Wort' },
+    { id: 107, name: 'Malt' },
+    { id: 108, name: 'Starter Wort' },
+    { id: 109, name: 'Yeast' },
+    { id: 110, name: 'Pilsner Malt' },
+    { id: 111, name: 'Caramel Pils Malt' },
+    { id: 112, name: 'Grain' },
+    { id: 113, name: 'Cinnamon' },
+    { id: 114, name: 'Vanilla Bean' },
+    { id: 115, name: 'Coffee Beans' },
+    { id: 116, name: 'Wheat' },
+    { id: 117, name: 'Honey' },
+  ]
   if (previousData.ingredients.length == 0) {
     return {
       type: FETCH_INGREDIENTS,
@@ -46,6 +47,13 @@ export function fetchIngredients() {
   return {
     type: FETCH_INGREDIENTS,
     payload: previousData.ingredients
+  }
+}
+
+export function createIngredients(arr) {
+  return {
+    type: CREATE_INGREDIENTS,
+    payload: arr
   }
 }
 

@@ -26,8 +26,10 @@ class RecipesList extends Component {
     }).filter( r => typeof r !== 'undefined')
 
     const filteredRecipes = searchedRecipes.map( recipe => {
-      var result = filters.filter(function(fs) {
-        return recipe.ingredients.some(function(ff) { return fs.indexOf(ff) > -1 });
+      var result = filters.filter( filter => {
+        return recipe.ingredients.some( ingredient => {
+          return filter.indexOf(ingredient) > -1
+        });
       });
       if (result.length === filters.length) {
         return recipe;

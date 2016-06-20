@@ -12,7 +12,6 @@ class NewRecipe extends Component {
     super(props);
 
     this.state = {
-      id: '',
       name: '',
       ingredients: [],
       imageUrl: '',
@@ -24,12 +23,10 @@ class NewRecipe extends Component {
 
   componentWillMount() {
     this.props.fetchRecipes();
-  }
-
-  idInput(e) {
-    this.setState({
-      id: e.target.value
-    });
+    if (this.props.ingredients.length == 0) {
+      // dont re-fetch ingredients if we already have them
+      this.props.fetchIngredients();
+    }
   }
 
   nameInput(e) {
@@ -56,7 +53,6 @@ class NewRecipe extends Component {
     const id = e.target.getAttribute('id');
     const ingredients = this.state.ingredients.slice();
     ingredients[id] = e.target.value;
-    console.log(ingredients);
     this.setState({
       ingredients: ingredients
     })
@@ -81,9 +77,17 @@ class NewRecipe extends Component {
 
   createRecipe(e) {
     e.preventDefault();
-    const id = this.state.id;
+
+    const latestRecipe = this.props.recipes.reduce( (a,b) => {
+      if (a.id > b.id) {
+        return a;
+      }
+      return b;
+    });
+
+    const id = latestRecipe.id + 1;
     const name = this.state.name;
-    const imageUrl = this.state.imageUrl;
+    const imageUrl = this.state.imageUrl || "/images/blankbeer.jpg";
 
     const ingredients = this.state.ingredients.filter( i => {
       if (typeof i !== 'undefined' && i.length > 0) {
@@ -91,7 +95,17 @@ class NewRecipe extends Component {
       }
     });
 
-    if (id.length < 1 || name.length < 1 || imageUrl.length < 1 || this.state.ingredients.length < 1) {
+    // check if all the ingredients exist in our state.ingredients
+    var ingredientsArray = this.props.ingredients.map( ing => ing.name);
+    var newIngredients = ingredients.filter( used => {
+      if (ingredientsArray.indexOf(used) === -1) {
+        return used
+      }
+    });
+    // Create ingredients that we don't already know about
+    this.props.createIngredients(newIngredients);
+
+    if (name.length < 1 || imageUrl.length < 1 || this.state.ingredients.length < 1) {
       return;
     }
     const newRecipe = { id, name, ingredients, imageUrl };
@@ -104,18 +118,13 @@ class NewRecipe extends Component {
       <div className="container">
         <form onSubmit={this.createRecipe.bind(this)}>
           <div>
-            <label>id:
-              <input type="text" onChange={this.idInput.bind(this)} value={this.state.id}/>
-            </label>
-          </div>
-          <div>
             <label>name:
               <input type="text" onChange={this.nameInput.bind(this)} value={this.state.name}/>
             </label>
           </div>
           <div>
             <label>image url:
-              <input type="text" onChange={this.imageUrlInput.bind(this)} value={this.state.imageUrl}/>
+              <input type="text" placeholder="beer.jpg" onChange={this.imageUrlInput.bind(this)} value={this.state.imageUrl}/>
             </label>
           </div>
           <label>ingredients:
@@ -132,7 +141,8 @@ class NewRecipe extends Component {
 
 function mapStateToProps(state) {
   return {
-    recipes: state.recipes
+    recipes: state.recipes,
+    ingredients: state.ingredients
   }
 }
 
