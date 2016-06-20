@@ -19,9 +19,9 @@ class Header extends Component {
             </Link>
           </Navbar.Brand>
         </Navbar.Header>
-        <ul className="pull-right nav navbar-nav" data-reactid=".0.0.0.1">
-          <li role="presentation" data-reactid=".0.0.0.1.$0/=10">
-            <a href="/beers/new" data-reactid=".0.0.0.1.$0/=10.0.0">New Recipe</a>
+        <ul className="pull-right nav navbar-nav">
+          <li role="presentation">
+            <Link to="/beers/new">New Recipe</Link>
           </li>
         </ul>
       </Navbar>

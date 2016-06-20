@@ -17,7 +17,6 @@ import { LOAD, SAVE } from 'redux-storage';
 export function fetchIngredients() {
   const rawStorage = localStorage.getItem("my-save-key");
   const previousData = JSON.parse(rawStorage);
-  console.log(previousData.ingredients.length)
 
   const initialState = [
     { id: 'ing1', name: 'Hops' },

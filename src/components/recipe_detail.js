@@ -37,14 +37,16 @@ class RecipeDetail extends Component {
       return <div>Loading...</div>
     }
     return (
-      <Thumbnail src={selectedRecipe.imageUrl} alt="242x200">
-        <h3>{selectedRecipe.name}</h3>
-        <p>{selectedRecipe.ingredients.join(', ')}</p>
-        <p>
-          <Button bsStyle="danger" onClick={this.delete.bind(this)}>Delete</Button>&nbsp;
-          { /* <Button bsStyle="default">Edit</Button> */ }
-        </p>
-      </Thumbnail>
+      <div className="container">
+        <Thumbnail src={selectedRecipe.imageUrl} alt="242x200">
+          <h3>{selectedRecipe.name}</h3>
+          <p>{selectedRecipe.ingredients.join(', ')}</p>
+          <p>
+            <Button bsStyle="danger" onClick={this.delete.bind(this)}>Delete</Button>&nbsp;
+            { /* <Button bsStyle="default">Edit</Button> */ }
+          </p>
+        </Thumbnail>
+      </div>
     );
   }
 }
