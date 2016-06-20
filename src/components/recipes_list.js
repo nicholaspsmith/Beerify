@@ -13,28 +13,22 @@ class RecipesList extends Component {
   }
 
   filterAndRenderRecipes() {
-    // if we have some filters in our filter array,
-    // then only show the recipes that contain all of them
-
-    const filters = this.props.filters;
     const recipes = this.props.recipes;
 
+    // Only show names of recipes if they match name entered in searchbar
     const searchedRecipes = recipes.map( recipe => {
       if (recipe.name.toLowerCase().indexOf(this.props.searchTerm.toLowerCase()) > -1) {
         return recipe;
       }
     }).filter( r => typeof r !== 'undefined')
 
-    const filteredRecipes = searchedRecipes.map( recipe => {
-      var result = filters.filter( filter => {
-        return recipe.ingredients.some( ingredient => {
-          return filter.indexOf(ingredient) > -1
-        });
-      });
-      if (result.length === filters.length) {
-        return recipe;
-      }
-    }).filter( r => typeof r !== 'undefined')
+    // only show recipes that have all ingredients in filter
+    const filters = this.props.filters;
+
+    const filteredRecipes = searchedRecipes.filter( recipe => {
+      const LENGTH = _.intersection(filters,recipe.ingredients).length
+      return filters.length === LENGTH
+    } )
 
     if (filteredRecipes.length === 0) {
       return <h3>No Results Found</h3>

@@ -15,10 +15,22 @@ class RecipeDetail extends Component {
     this.props.fetchRecipes();
   }
 
+  componentDidUpdate() {
+    const id = this.props.params.id;
+    const selectedRecipe = this.props.recipes.filter( rec => {
+      if (rec.id == id) {
+        return rec;
+      }
+     });
+    if (selectedRecipe.length == 0) {
+      this.context.router.push("/")
+    }
+  }
+
   delete() {
     const filteredRecipes = this.props.recipes.filter( r => r.id != this.props.params.id );
 
-    // @TODO call remove recipe action
+    // remove this recipe from our app state
     this.props.deleteRecipe(this.props.params.id);
 
     this.context.router.push('/');
