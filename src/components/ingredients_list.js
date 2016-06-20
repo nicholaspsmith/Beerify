@@ -6,17 +6,23 @@ import {
   ListGroup,
   Checkbox
 } from 'react-bootstrap';
+import _ from 'lodash';
 
 class IngredientsList extends Component {
   constructor(props) {
     super(props);
+
+    this.props.clearFilter();
   }
 
   componentWillMount() {
-    this.props.fetchIngredients();
+    if (this.props.ingredients.length < 1) {
+      this.props.fetchIngredients();
+    }
   }
 
   boxChecked(e) {
+    // Is the ingredient in our filters array?
     const index = this.props.filters.indexOf(e.target.value);
     if (index < 0) {
       // Add checked ingredient to filters
@@ -29,8 +35,19 @@ class IngredientsList extends Component {
 
   orderAndRenderIngredients() {
     // sort ingredients alphabetically
-    // then render
-    return this.props.ingredients.map(this.renderIngredient.bind(this))
+    const orderedIngredients = this.props.ingredients.sort( (a,b) => {
+      const lowerA = a.name.toLowerCase();
+      const lowerB = b.name.toLowerCase();
+      if (lowerA < lowerB) {
+        return -1;
+      } if (lowerA > lowerB) {
+        return 1;
+      }
+      return 0;
+    });
+
+    // render each ingredient
+    return orderedIngredients.map(this.renderIngredient.bind(this));
   }
 
   renderIngredient(ingredient) {

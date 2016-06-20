@@ -1,6 +1,7 @@
 import {
   ADD_INGREDIENT_TO_FILTER,
-  REMOVE_INGREDIENT_FROM_FILTER
+  REMOVE_INGREDIENT_FROM_FILTER,
+  CLEAR_FILTER
  } from '../actions/types';
 
 export default function reducerFilters(state = [], action) {
@@ -12,6 +13,8 @@ export default function reducerFilters(state = [], action) {
         ...state.slice(0, action.payload.index),
         ...state.slice(action.payload.index + 1)
       ]
+    case CLEAR_FILTER:
+      return []
   }
   return state;
 }

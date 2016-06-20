@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Col } from 'react-bootstrap';
 import IngredientsList from './ingredients_list';
 import RecipesList from './recipes_list';
+import SearchBar from './search_bar';
+import { Col } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 export default class MainView extends Component {
   render() {
     return (
       <div>
+        <SearchBar />
+        <Link className="btn btn-default" to="/beers/new"><span>+</span></Link>
         <Col sm={4}>
           <IngredientsList />
         </Col>

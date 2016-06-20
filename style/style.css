@@ -7,11 +7,10 @@
   margin: 0 15px 15px;
 }
 
-.plus-button-nav.nav {
-  margin-bottom: 20px;
+.navbar-header .navbar-brand {
+  padding: 4px 0 0;
 }
-.plus-button-nav .navbar-nav,
-.plus-button-nav .navbar-nav li,
-.plus-button-nav .navbar-nav li a {
-  width: 100%;
+
+.navbar-header .navbar-brand img {
+  width: 105px;
 }

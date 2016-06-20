@@ -5,7 +5,6 @@ module.exports = {
   output: {
     path: __dirname,
     publicPath: '/',
-    headers: {"Access-Control-Allow-Origin": "*"},
     filename: 'bundle.js'
   },
   module: {

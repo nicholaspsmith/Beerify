@@ -4,8 +4,6 @@ import * as actions from '../actions';
 import { Link } from 'react-router'
 import {
   Panel,
-  Button,
-  Nav,
   Media
 } from 'react-bootstrap';
 
@@ -69,11 +67,6 @@ class RecipesList extends Component {
     }
     return (
       <Panel header="Beer List">
-        <Nav className="plus-button-nav" bsStyle="pills" activeKey={1}>
-          <ul className="nav navbar-nav">
-            <li><Link className="btn btn-default" to="/beers/new"><span>+</span></Link></li>
-          </ul>
-        </Nav>
         {this.filterAndRenderRecipes()}
       </Panel>
     );
