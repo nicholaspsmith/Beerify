@@ -1,26 +1,27 @@
 import cfg from './config';
 import express from 'express';
 import http from 'http';
-import {r, listen as wsListen} from 'rethinkdb-websocket-server';
-import Promise from 'bluebird';
+import bodyParser from 'body-parser'
+import morgan from 'morgan';
+import mongoose from 'mongoose';
+import router from './router';
 
-// Connect to rethinkdb
-const dbOpts = {host: cfg.dbHost, port: cfg.dbPort, db: cfg.dbName};
-const dbConnPromise = Promise.promisify(r.connect)(dbOpts);
+// Connect to mongodb
+mongoose.connect('mongodb://localhost:beerify/beerify');
 
 const app = express();
 
 const httpServer = http.createServer(app);
 
-// Configure rethinkdb-websocket-server to listen on the /db path
-wsListen({
-  httpServer,
-  httpPath: '/db',
-  dbHost: cfg.dbHost,
-  dbPort: cfg.dbPort,
-  unsafelyAllowAnyQuery: true,
-});
+// middleware
+app.use(morgan('combined')); // logging framework
+app.use(bodyParser.json({ type: '*/*' }));
 
-// Start the HTTP server on the configured port
-httpServer.listen(cfg.webPort);
-console.log('Server started');
+// hook up our router
+router(app);
+
+// Server Setup -- communicate with world. //
+const port = process.env.PORT || 3090;
+const server = http.createServer(app);
+server.listen(port);
+console.log("Server listening on localhost:"+port);
