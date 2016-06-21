@@ -1,0 +1,181 @@
+2016-06-20T19:05:52.445397000 0.445843s notice: Recursively removing directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data/tmp
+2016-06-20T19:05:52.447653000 0.448104s notice: Initializing directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T19:05:52.447731000 0.448177s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/nicholassmith/Desktop/Beerify/rethinkdb_data' did not already exist or is empty.)
+2016-06-20T19:05:52.447776000 0.448222s notice: Running rethinkdb 2.3.2 (CLANG 7.3.0 (clang-703.0.31))...
+2016-06-20T19:05:52.470599000 0.471046s notice: Running on Darwin 16.0.0 x86_64
+2016-06-20T19:05:52.470639000 0.471084s notice: Loading data from directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T19:05:52.568112000 0.568595s info: Automatically using cache size of 715 MB
+2016-06-20T19:05:52.571488000 0.571970s notice: Listening for intracluster connections on port 29015
+2016-06-20T19:05:52.573971000 0.574453s notice: Listening for client driver connections on port 28015
+2016-06-20T19:05:52.628075000 0.628558s error: Could not bind to http port: The address at localhost:8080 is reserved or already in use.
+2016-06-20T19:09:00.216767000 0.366709s notice: Running rethinkdb 2.3.2 (CLANG 7.3.0 (clang-703.0.31))...
+2016-06-20T19:09:00.231198000 0.381138s notice: Running on Darwin 16.0.0 x86_64
+2016-06-20T19:09:00.231282000 0.381221s notice: Loading data from directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T19:09:00.267942000 0.417881s info: Automatically using cache size of 1538 MB
+2016-06-20T19:09:00.269521000 0.419460s notice: Listening for intracluster connections on port 29015
+2016-06-20T19:09:00.271460000 0.421399s notice: Listening for client driver connections on port 28015
+2016-06-20T19:09:00.288033000 0.437972s error: Could not bind to http port: The address at localhost:28015 is reserved or already in use.
+2016-06-20T19:09:13.778562000 0.008243s notice: Running rethinkdb 2.3.2 (CLANG 7.3.0 (clang-703.0.31))...
+2016-06-20T19:09:13.782735000 0.012412s notice: Running on Darwin 16.0.0 x86_64
+2016-06-20T19:09:13.782798000 0.012474s notice: Loading data from directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T19:09:13.837108000 0.066785s info: Automatically using cache size of 1398 MB
+2016-06-20T19:09:13.838752000 0.068429s notice: Listening for intracluster connections on port 29015
+2016-06-20T19:09:13.840010000 0.069687s notice: Listening for client driver connections on port 28015
+2016-06-20T19:09:13.856520000 0.086196s error: Could not bind to http port: The address at localhost:28015 is reserved or already in use.
+2016-06-20T19:09:17.300296000 0.007834s notice: Running rethinkdb 2.3.2 (CLANG 7.3.0 (clang-703.0.31))...
+2016-06-20T19:09:17.304741000 0.012276s notice: Running on Darwin 16.0.0 x86_64
+2016-06-20T19:09:17.304786000 0.012320s notice: Loading data from directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T19:09:17.555573000 0.263107s info: Automatically using cache size of 1105 MB
+2016-06-20T19:09:17.557283000 0.264817s notice: Listening for intracluster connections on port 29015
+2016-06-20T19:09:17.559089000 0.266623s notice: Listening for client driver connections on port 28015
+2016-06-20T19:09:17.559294000 0.266827s notice: Listening for administrative HTTP connections on port 8080
+2016-06-20T19:09:17.559301000 0.266835s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2016-06-20T19:09:17.559305000 0.266839s notice: Listening on driver addresses: 127.0.0.1, ::1
+2016-06-20T19:09:17.559308000 0.266842s notice: Listening on http addresses: 127.0.0.1, ::1
+2016-06-20T19:09:17.559312000 0.266845s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-06-20T19:09:17.559316000 0.266849s notice: Server ready, "Nickbook_3_local_ovb" 3a18f859-aa5d-4bb0-8d61-54e3401ffde4
+2016-06-20T19:09:17.595516000 0.303050s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:09:18.806920000 1.514492s notice: A newer version of the RethinkDB server is available: 2.3.4. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2016-06-20T19:09:23.484798000 6.192483s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:09:29.522511000 12.230307s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:09:34.475079000 17.182988s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:09:40.174381000 22.882402s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:09:46.729185000 29.437356s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:09:52.370238000 35.078559s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:09:58.500365000 41.208800s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:10:04.513502000 47.222087s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:10:10.503893000 53.212590s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:10:15.505626000 58.214435s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:11:14.364392000 117.074477s notice: Server got SIGINT from pid 2154, uid 501; shutting down...
+2016-06-20T19:11:14.364885000 117.074970s notice: Shutting down client connections...
+2016-06-20T19:11:14.366210000 117.076294s notice: All client connections closed.
+2016-06-20T19:11:14.366219000 117.076304s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-06-20T19:11:14.380195000 117.090280s notice: Storage engine shut down.
+2016-06-20T19:11:16.797195000 0.428809s notice: Running rethinkdb 2.3.2 (CLANG 7.3.0 (clang-703.0.31))...
+2016-06-20T19:11:16.818851000 0.450460s notice: Running on Darwin 16.0.0 x86_64
+2016-06-20T19:11:16.818904000 0.450511s notice: Loading data from directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T19:11:16.897098000 0.528706s info: Automatically using cache size of 767 MB
+2016-06-20T19:11:16.900981000 0.532590s notice: Listening for intracluster connections on port 29015
+2016-06-20T19:11:16.904339000 0.535947s notice: Listening for client driver connections on port 28015
+2016-06-20T19:11:16.904485000 0.536092s notice: Listening for administrative HTTP connections on port 8080
+2016-06-20T19:11:16.904492000 0.536099s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2016-06-20T19:11:16.904496000 0.536103s notice: Listening on driver addresses: 127.0.0.1, ::1
+2016-06-20T19:11:16.904498000 0.536106s notice: Listening on http addresses: 127.0.0.1, ::1
+2016-06-20T19:11:16.904502000 0.536110s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-06-20T19:11:16.904506000 0.536114s notice: Server ready, "Nickbook_3_local_ovb" 3a18f859-aa5d-4bb0-8d61-54e3401ffde4
+2016-06-20T19:11:17.795959000 1.427567s notice: A newer version of the RethinkDB server is available: 2.3.4. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2016-06-20T19:12:00.970211000 44.602760s notice: Server got SIGINT from pid 2154, uid 501; shutting down...
+2016-06-20T19:12:00.970369000 44.602915s notice: Shutting down client connections...
+2016-06-20T19:12:00.970637000 44.603183s notice: All client connections closed.
+2016-06-20T19:12:00.970644000 44.603189s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-06-20T19:12:00.971129000 44.603674s notice: Storage engine shut down.
+2016-06-20T19:56:36.568850000 0.315904s notice: Running rethinkdb 2.3.2 (CLANG 7.3.0 (clang-703.0.31))...
+2016-06-20T19:56:36.585051000 0.332102s notice: Running on Darwin 16.0.0 x86_64
+2016-06-20T19:56:36.585094000 0.332143s notice: Loading data from directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T19:56:36.620737000 0.367787s info: Automatically using cache size of 1362 MB
+2016-06-20T19:56:36.623177000 0.370226s notice: Listening for intracluster connections on port 29015
+2016-06-20T19:56:36.625627000 0.372676s notice: Listening for client driver connections on port 28015
+2016-06-20T19:56:36.641576000 0.388625s error: Could not bind to http port: The address at localhost:28015 is reserved or already in use.
+2016-06-20T19:56:51.448076000 0.006762s notice: Running rethinkdb 2.3.2 (CLANG 7.3.0 (clang-703.0.31))...
+2016-06-20T19:56:51.452225000 0.010907s notice: Running on Darwin 16.0.0 x86_64
+2016-06-20T19:56:51.452261000 0.010943s notice: Loading data from directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T19:56:51.482090000 0.040810s info: Automatically using cache size of 1371 MB
+2016-06-20T19:56:51.483621000 0.042341s notice: Listening for intracluster connections on port 29015
+2016-06-20T19:56:51.484931000 0.043651s notice: Listening for client driver connections on port 28015
+2016-06-20T19:56:51.501074000 0.059794s error: Could not bind to http port: The address at localhost:28015 is reserved or already in use.
+2016-06-20T19:56:56.639080000 0.006813s notice: Running rethinkdb 2.3.2 (CLANG 7.3.0 (clang-703.0.31))...
+2016-06-20T19:56:56.643371000 0.011100s notice: Running on Darwin 16.0.0 x86_64
+2016-06-20T19:56:56.643411000 0.011139s notice: Loading data from directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T19:56:56.660169000 0.027898s info: Automatically using cache size of 1365 MB
+2016-06-20T19:56:56.661601000 0.029329s notice: Listening for intracluster connections on port 29015
+2016-06-20T19:56:56.662910000 0.030638s notice: Listening for client driver connections on port 28015
+2016-06-20T19:56:56.663018000 0.030746s notice: Listening for administrative HTTP connections on port 8080
+2016-06-20T19:56:56.663020000 0.030748s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2016-06-20T19:56:56.663023000 0.030751s notice: Listening on driver addresses: 127.0.0.1, ::1
+2016-06-20T19:56:56.663025000 0.030753s notice: Listening on http addresses: 127.0.0.1, ::1
+2016-06-20T19:56:56.663029000 0.030757s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-06-20T19:56:56.663032000 0.030760s notice: Server ready, "Nickbook_3_local_ovb" 3a18f859-aa5d-4bb0-8d61-54e3401ffde4
+2016-06-20T19:56:57.698880000 1.066647s notice: A newer version of the RethinkDB server is available: 2.3.4. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2016-06-20T19:57:01.016033000 4.383875s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:57:06.990736000 10.358728s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:57:12.967580000 16.335685s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:57:18.973476000 22.341731s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:57:25.020186000 28.388591s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:57:27.947403000 31.315884s notice: Someone asked for the nonwhitelisted file "/sockjs-node/info".  If this should be accessible, add it to the static web assets.
+2016-06-20T19:58:49.012471000 112.382942s notice: Server got SIGINT from pid 2154, uid 501; shutting down...
+2016-06-20T19:58:49.012606000 112.383076s notice: Shutting down client connections...
+2016-06-20T19:58:49.013451000 112.383921s notice: All client connections closed.
+2016-06-20T19:58:49.013465000 112.383935s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-06-20T19:58:49.018287000 112.388758s notice: Storage engine shut down.
+2016-06-20T20:00:06.655769000 0.276699s notice: Running rethinkdb 2.3.2 (CLANG 7.3.0 (clang-703.0.31))...
+2016-06-20T20:00:06.668782000 0.289710s notice: Running on Darwin 16.0.0 x86_64
+2016-06-20T20:00:06.668847000 0.289773s notice: Loading data from directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T20:00:06.707894000 0.328821s info: Automatically using cache size of 1206 MB
+2016-06-20T20:00:06.709688000 0.330615s notice: Listening for intracluster connections on port 29015
+2016-06-20T20:00:06.711060000 0.331986s notice: Listening for client driver connections on port 28015
+2016-06-20T20:00:06.711173000 0.332100s notice: Listening for administrative HTTP connections on port 8080
+2016-06-20T20:00:06.711175000 0.332101s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2016-06-20T20:00:06.711178000 0.332104s notice: Listening on driver addresses: 127.0.0.1, ::1
+2016-06-20T20:00:06.711180000 0.332106s notice: Listening on http addresses: 127.0.0.1, ::1
+2016-06-20T20:00:06.711184000 0.332110s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-06-20T20:00:06.711188000 0.332114s notice: Server ready, "Nickbook_3_local_ovb" 3a18f859-aa5d-4bb0-8d61-54e3401ffde4
+2016-06-20T20:00:06.982654000 0.603580s notice: A newer version of the RethinkDB server is available: 2.3.4. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2016-06-20T20:21:14.739189000 1268.391287s info: Table 2d6545c1-2a10-46c3-b951-632605e10ead: Starting a new Raft election for term 1.
+2016-06-20T20:21:14.745997000 1268.398093s info: Table 2d6545c1-2a10-46c3-b951-632605e10ead: Added replica on this server.
+2016-06-20T20:21:14.771130000 1268.423226s info: Table 2d6545c1-2a10-46c3-b951-632605e10ead: This server is Raft leader for term 1. Latest log index is 0.
+2016-06-20T20:27:29.367308000 1643.028677s notice: Someone asked for the nonwhitelisted file "/db".  If this should be accessible, add it to the static web assets.
+2016-06-20T20:34:07.125812000 2040.797023s notice: Someone asked for the nonwhitelisted file "/db".  If this should be accessible, add it to the static web assets.
+2016-06-20T20:35:03.697695000 2097.370317s notice: Someone asked for the nonwhitelisted file "/db".  If this should be accessible, add it to the static web assets.
+2016-06-20T20:35:08.927602000 2102.600339s notice: Server got SIGINT from pid 2154, uid 501; shutting down...
+2016-06-20T20:35:08.928075000 2102.600812s notice: Shutting down client connections...
+2016-06-20T20:35:08.936629000 2102.609366s notice: All client connections closed.
+2016-06-20T20:35:08.936647000 2102.609384s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-06-20T20:35:09.035125000 2102.707862s notice: Storage engine shut down.
+2016-06-20T20:35:11.530671000 0.368441s notice: Running rethinkdb 2.3.2 (CLANG 7.3.0 (clang-703.0.31))...
+2016-06-20T20:35:11.552397000 0.390159s notice: Running on Darwin 16.0.0 x86_64
+2016-06-20T20:35:11.552463000 0.390224s notice: Loading data from directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T20:35:11.621624000 0.459385s info: Automatically using cache size of 486 MB
+2016-06-20T20:35:11.628182000 0.465944s notice: Listening for intracluster connections on port 29015
+2016-06-20T20:35:11.654211000 0.491973s notice: Listening for client driver connections on port 28015
+2016-06-20T20:35:11.654406000 0.492168s notice: Listening for administrative HTTP connections on port 8080
+2016-06-20T20:35:11.654431000 0.492192s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2016-06-20T20:35:11.654434000 0.492195s notice: Listening on driver addresses: 127.0.0.1, ::1
+2016-06-20T20:35:11.654436000 0.492197s notice: Listening on http addresses: 127.0.0.1, ::1
+2016-06-20T20:35:11.654437000 0.492198s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-06-20T20:35:11.654451000 0.492213s notice: Server ready, "Nickbook_3_local_ovb" 3a18f859-aa5d-4bb0-8d61-54e3401ffde4
+2016-06-20T20:35:12.720785000 1.558585s notice: A newer version of the RethinkDB server is available: 2.3.4. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2016-06-20T20:35:12.872573000 1.710372s info: Table 2d6545c1-2a10-46c3-b951-632605e10ead: Starting a new Raft election for term 2.
+2016-06-20T20:35:12.906981000 1.744780s info: Table 2d6545c1-2a10-46c3-b951-632605e10ead: This server is Raft leader for term 2. Latest log index is 2.
+2016-06-20T20:35:27.303293000 16.141437s notice: Someone asked for the nonwhitelisted file "/db".  If this should be accessible, add it to the static web assets.
+2016-06-20T20:36:18.373685000 67.213087s notice: Someone asked for the nonwhitelisted file "/db".  If this should be accessible, add it to the static web assets.
+2016-06-20T20:36:42.467470000 91.307483s notice: Someone asked for the nonwhitelisted file "/db".  If this should be accessible, add it to the static web assets.
+2016-06-20T20:36:42.624005000 91.464017s notice: Someone asked for the nonwhitelisted file "/db".  If this should be accessible, add it to the static web assets.
+2016-06-20T20:37:29.157510000 137.998666s notice: Someone asked for the nonwhitelisted file "/db".  If this should be accessible, add it to the static web assets.
+2016-06-20T20:37:29.607072000 138.448229s notice: Someone asked for the nonwhitelisted file "/db".  If this should be accessible, add it to the static web assets.
+2016-06-20T20:38:49.402174000 218.245314s notice: Someone asked for the nonwhitelisted file "/db".  If this should be accessible, add it to the static web assets.
+2016-06-20T20:38:49.536901000 218.380041s notice: Someone asked for the nonwhitelisted file "/db".  If this should be accessible, add it to the static web assets.
+2016-06-20T20:40:12.528594000 301.373793s notice: Server got SIGINT from pid 2154, uid 501; shutting down...
+2016-06-20T20:40:12.528750000 301.373948s notice: Shutting down client connections...
+2016-06-20T20:40:12.538290000 301.383490s notice: All client connections closed.
+2016-06-20T20:40:12.538317000 301.383515s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-06-20T20:40:12.548583000 301.393782s notice: Storage engine shut down.
+2016-06-20T20:40:21.941916000 0.352953s notice: Running rethinkdb 2.3.2 (CLANG 7.3.0 (clang-703.0.31))...
+2016-06-20T20:40:21.949672000 0.360706s notice: Running on Darwin 16.0.0 x86_64
+2016-06-20T20:40:21.949726000 0.360758s notice: Loading data from directory /Users/nicholassmith/Desktop/Beerify/rethinkdb_data
+2016-06-20T20:40:21.996771000 0.407804s info: Automatically using cache size of 1003 MB
+2016-06-20T20:40:21.998954000 0.409987s notice: Listening for intracluster connections on port 29015
+2016-06-20T20:40:22.019002000 0.430035s notice: Listening for client driver connections on port 28015
+2016-06-20T20:40:22.019219000 0.430251s notice: Listening for administrative HTTP connections on port 8080
+2016-06-20T20:40:22.019222000 0.430254s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2016-06-20T20:40:22.019317000 0.430349s notice: Listening on driver addresses: 127.0.0.1, ::1
+2016-06-20T20:40:22.019320000 0.430353s notice: Listening on http addresses: 127.0.0.1, ::1
+2016-06-20T20:40:22.019323000 0.430355s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-06-20T20:40:22.019347000 0.430380s notice: Server ready, "Nickbook_3_local_ovb" 3a18f859-aa5d-4bb0-8d61-54e3401ffde4
+2016-06-20T20:40:23.508548000 1.919619s info: Table 2d6545c1-2a10-46c3-b951-632605e10ead: Starting a new Raft election for term 3.
+2016-06-20T20:40:23.526324000 1.937394s info: Table 2d6545c1-2a10-46c3-b951-632605e10ead: This server is Raft leader for term 3. Latest log index is 5.
+2016-06-20T20:40:23.939290000 2.350398s notice: A newer version of the RethinkDB server is available: 2.3.4. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2016-06-20T20:42:23.537533000 121.951579s notice: Server got SIGINT from pid 2154, uid 501; shutting down...
+2016-06-20T20:42:23.537920000 121.951966s notice: Shutting down client connections...
+2016-06-20T20:42:23.540155000 121.954201s notice: All client connections closed.
+2016-06-20T20:42:23.540170000 121.954215s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-06-20T20:42:23.584025000 121.998071s notice: Storage engine shut down.

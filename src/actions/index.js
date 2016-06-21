@@ -15,7 +15,27 @@ import { LOAD, SAVE } from 'redux-storage';
 // import config from '../../config'
 // const URL = `http://api.brewerydb.com/v2/ingredients?key=${config.brewerydb}&format=json`;
 
+import ReactRethinkdb from 'react-rethinkdb';
+var r = ReactRethinkdb.r;
+
+// Open a react-rethinkdb session (a WebSocket connection to the server)
+ReactRethinkdb.DefaultSession.connect({
+  host: 'localhost', // hostname of the websocket server
+  port: 9090,        // port number of the websocket server
+  path: '/db',       // HTTP path to websocket route
+  secure: false,     // set true to use secure TLS websockets
+  db: 'test',        // default database, passed to rethinkdb.connect
+});
+
+
+
 export function fetchIngredients() {
+  // const req = new ReactRethinkdb.QueryRequest({
+  //   query: r.table('test'),
+  //   changes: true,
+  //   initial: []
+  // });
+  // console.log(req);
   const rawStorage = localStorage.getItem("my-save-key");
   const previousData = JSON.parse(rawStorage);
 
