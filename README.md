@@ -7,7 +7,7 @@ If you do not have mongodb installed, follow the guide on [mongodb.com/installat
 
 Once you have mongodb installed, grab your favorite terminal and run the following command to start the mongo server
 ```
-mongod
+  > mongod
 ```
 
 ##### 2. Start Server
