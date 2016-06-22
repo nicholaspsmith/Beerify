@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const Schema = mognoose.schema;
+const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
   id: Number,
@@ -8,3 +8,7 @@ const recipeSchema = new Schema({
   imageUrl: String,
   ingredients: Array
 });
+
+const RecipeClass = mongoose.model('recipe', recipeSchema);
+
+export default RecipeClass;
