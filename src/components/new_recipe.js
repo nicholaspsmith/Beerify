@@ -49,14 +49,12 @@ class NewRecipe extends Component {
 
   printInput(id) {
     return (
-      <div key={id}>
-        <FormControl onInput={this.ingredientTyped} id={id} type="text"/>
-      </div>
+      <FormControl data-id={id} key={id} onInput={this.ingredientTyped} type="text"/>
     );
   }
 
   ingredientTyped(e) {
-    const id = e.target.getAttribute('id');
+    const id = e.target.getAttribute('data-id');
     const ingredients = this.state.ingredients.slice();
     ingredients[id] = e.target.value;
     this.setState({
@@ -108,12 +106,26 @@ class NewRecipe extends Component {
         return used
       }
     });
-    // Create ingredients that we don't already know about
-    this.props.createIngredients(newIngredients);
+
+    // Find index to start numbering our id's
+
+    let index = this.props.ingredients.reduce( (a,b) => {
+      if (a.id > b.id) { return a; }
+      return b;
+    }).id;
+
+    // the array of our new ingredients
+    const newElementsArray = newIngredients.map( ing => {
+      return { id: ++index, name: ing }
+    });
+
+    this.props.createIngredients(newElementsArray);
 
     if (name.length < 1 || imageUrl.length < 1 || this.state.ingredients.length < 1) {
       return;
     }
+
+
     const newRecipe = { id, name, ingredients, imageUrl };
     this.props.createRecipe(newRecipe);
     this.context.router.push("/");

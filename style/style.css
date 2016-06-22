@@ -18,3 +18,8 @@
 .container {
   max-width: 100%;
 }
+
+.panel-body {
+    max-height: 800px;
+    overflow: scroll;
+}

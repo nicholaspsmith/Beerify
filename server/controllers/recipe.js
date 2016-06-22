@@ -38,3 +38,8 @@ exports.fetchRecipes = function(req, res, next) {
     });
   })
 }
+
+exports.createRecipe = function({ body: {id, name, imageUrl, ingredients}}, res, next) {
+  Recipe.create({ id, name, imageUrl, ingredients});
+  res.send({message: "Successfully created " + name});
+}

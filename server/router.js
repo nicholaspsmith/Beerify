@@ -7,5 +7,7 @@ export default function(app) {
     res.send({ "hello": "success" });
   });
   app.get('/recipes', recipeController.fetchRecipes);
+  app.post('/recipes', recipeController.createRecipe);
   app.get('/ingredients', ingredientsController.fetchIngredients);
+  app.post('/ingredients', ingredientsController.createIngredients);
 }

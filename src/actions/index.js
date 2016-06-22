@@ -36,10 +36,14 @@ export function fetchIngredients() {
   }
 }
 
-export function createIngredients(arr) {
-  return {
-    type: CREATE_INGREDIENTS,
-    payload: arr
+export function createIngredients(ingredientsArray) {
+  console.log('creating ' + ingredientsArray[0] + " " + ingredientsArray[1] + " and others...");
+  return function(dispatch) {
+    axios.post(`${API_URL}/ingredients`, ingredientsArray);
+    dispatch({
+      type: CREATE_INGREDIENTS,
+      payload: ingredientsArray
+    })
   }
 }
 
@@ -59,9 +63,14 @@ export function fetchRecipes() {
 }
 
 export function createRecipe(recipe) {
-  return {
-    type: CREATE_RECIPE,
-    payload: recipe
+  return function(dispatch) {
+    axios.post(`${API_URL}/recipes`, recipe)
+      .then( response => {
+        dispatch( { type: CREATE_RECIPE, payload: recipe })
+      })
+      .catch( err => {
+        dispatch(err)
+      })
   }
 }
 

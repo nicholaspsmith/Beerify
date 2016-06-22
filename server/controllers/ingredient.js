@@ -37,3 +37,9 @@ exports.fetchIngredients = function(req, res, next) {
   })
 }
 
+exports.createIngredients = function(req, res, next) {
+  Ingredient.create(req.body, err=> {
+    return next(err);
+  })
+  res.send(200);
+}
