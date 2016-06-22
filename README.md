@@ -5,8 +5,13 @@
 ##### 1. Run Mongo
 If you do not have mongodb installed, follow the guide on [mongodb.com/installation](https://docs.mongodb.com/manual/installation/#mongodb-community-edition)
 
+Once you have mongodb installed, grab your favorite terminal and run the following command to start the mongo server
+```
+mongod
+```
+
 ##### 2. Start Server
-Grab your favorite terminal and run the following commands
+Open a new tab in your terminal and run the following commands
 ```
   > git clone git@github.com:nicholaspsmith/BeerRecipes.git
   > cd BeerRecipes
