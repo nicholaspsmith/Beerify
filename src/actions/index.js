@@ -37,7 +37,6 @@ export function fetchIngredients() {
 }
 
 export function createIngredients(ingredientsArray) {
-  console.log('creating ' + ingredientsArray[0] + " " + ingredientsArray[1] + " and others...");
   return function(dispatch) {
     axios.post(`${API_URL}/ingredients`, ingredientsArray);
     dispatch({

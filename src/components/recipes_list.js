@@ -38,19 +38,19 @@ class RecipesList extends Component {
 
   renderRecipe(recipe) {
     return (
-        <Panel key={recipe.id}>
-          <Media>
-            <Media.Left align="middle">
-              <img width={64} height={64} src={recipe.imageUrl} alt="Image"/>
-            </Media.Left>
-            <Media.Body>
-              <Link to={"/beers/" + recipe.id} key={recipe.id}>
-                <Media.Heading>{recipe.name}</Media.Heading>
-                {recipe.ingredients.join(", ")}
-              </Link>
-            </Media.Body>
-          </Media>
-        </Panel>
+      <Panel key={recipe.id}>
+        <Media>
+          <Media.Left align="middle">
+            <img width={64} height={64} src={recipe.imageUrl} alt="Image"/>
+          </Media.Left>
+          <Media.Body>
+            <Link to={"/beers/" + recipe.id} key={recipe.id}>
+              <Media.Heading>{recipe.name}</Media.Heading>
+              {recipe.ingredients.join(", ")}
+            </Link>
+          </Media.Body>
+        </Media>
+      </Panel>
     )
   }
 
