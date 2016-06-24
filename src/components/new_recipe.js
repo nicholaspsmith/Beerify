@@ -59,7 +59,7 @@ class NewRecipe extends Component {
     ingredients[id] = e.target.value;
     this.setState({
       ingredients: ingredients
-    })
+    });
   }
 
   incrementIngredients(e) {

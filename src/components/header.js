@@ -11,7 +11,7 @@ import {
 class Header extends Component {
   render() {
     return (
-      <Navbar className="main-navbar">
+      <Navbar>
         <Navbar.Header className="col-sm-4">
           <Navbar.Brand>
             <Link to="/">

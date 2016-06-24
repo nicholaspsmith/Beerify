@@ -43,3 +43,8 @@ exports.createRecipe = function({ body: {id, name, imageUrl, ingredients}}, res,
   Recipe.create({ id, name, imageUrl, ingredients});
   res.send({message: "Successfully created " + name});
 }
+
+exports.deleteRecipe = function( {params:  { id } }, res ) {
+  Recipe.remove({ id: id });
+  res.send({ message: "Successfully deleted recipe #" + id});
+}

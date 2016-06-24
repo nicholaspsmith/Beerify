@@ -28,6 +28,7 @@ class RecipeDetail extends Component {
   }
 
   delete() {
+    console.log("delete");
     const filteredRecipes = this.props.recipes.filter( r => r.id != this.props.params.id );
 
     // remove this recipe from our app state
@@ -50,9 +51,10 @@ class RecipeDetail extends Component {
     }
     return (
       <div className="container">
-        <Thumbnail src={selectedRecipe.imageUrl} alt="242x200">
+        <Thumbnail src={selectedRecipe.imageUrl} className="clearfix">
           <h3>{selectedRecipe.name}</h3>
-          <p>{selectedRecipe.ingredients.join(', ')}</p>
+
+          <p><strong>Ingredients:</strong> {selectedRecipe.ingredients.join(', ')}</p>
           <p>
             <Button bsStyle="danger" onClick={this.delete.bind(this)}>Delete</Button>&nbsp;
             { /* <Button bsStyle="default">Edit</Button> */ }

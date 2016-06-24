@@ -75,9 +75,19 @@ export function createRecipe(recipe) {
 }
 
 export function deleteRecipe(id) {
-  return {
-    type: DELETE_RECIPE,
-    payload: id
+  if (typeof id !== 'undefined') {
+    return function(dispatch) {
+      axios.delete(`${API_URL}/recipes/${id}`)
+        .then( response => {
+          dispatch( {
+            type: DELETE_RECIPE,
+            payload: id
+          })
+        })
+        .catch(err => {
+          dispatch(err)
+        });
+    }
   }
 }
 

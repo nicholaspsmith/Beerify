@@ -8,6 +8,7 @@ export default function(app) {
   });
   app.get('/recipes', recipeController.fetchRecipes);
   app.post('/recipes', recipeController.createRecipe);
+  app.delete('/recipes/:id', recipeController.deleteRecipe);
   app.get('/ingredients', ingredientsController.fetchIngredients);
   app.post('/ingredients', ingredientsController.createIngredients);
 }

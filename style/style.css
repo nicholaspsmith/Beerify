@@ -1,10 +1,18 @@
+.navbar,
+.panel-heading {
+  background: #fff !important;
+  color: #000 !important;
+  font-weight: 900;
+}
+
+.navbar-default a {
+  color: #000 !important;
+  font-weight: 900;
+}
+
 .navbar-form .form-control.search-bar {
   width: 440px;
   margin-left: 140px;
-}
-
-.main-navbar {
-  margin: 0 15px 15px;
 }
 
 .navbar-header .navbar-brand {
@@ -22,4 +30,22 @@
 .panel-body {
     max-height: 800px;
     overflow: scroll;
+}
+
+.navbar-brand {
+    margin-left: 0 !important;
+}
+
+a {
+  color: #434343 !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.beerify .thumbnail > img {
+  float: left;
+  margin: 16px 30px;
+  max-width: 140px;
 }
