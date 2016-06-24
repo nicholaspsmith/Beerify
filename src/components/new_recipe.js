@@ -8,7 +8,7 @@ import {
   Button,
   FormControl
 } from 'react-bootstrap';
-import FileReaderInput from 'react-file-reader-input';
+import Dropzone from 'react-dropzone';
 
 class NewRecipe extends Component {
   static contextTypes = {
@@ -22,6 +22,7 @@ class NewRecipe extends Component {
       name: '',
       ingredients: [],
       imageUrl: '',
+      imageFile: {},
       ingredientInputs: 1
     };
 
@@ -39,12 +40,6 @@ class NewRecipe extends Component {
   nameInput(e) {
     this.setState({
       name: e.target.value
-    });
-  }
-
-  imageUrlInput(e) {
-    this.setState({
-      imageUrl: e.target.value
     });
   }
 
@@ -80,16 +75,10 @@ class NewRecipe extends Component {
     }
   }
 
-  imageSet(e, results) {
-    e.preventDefault();
-    results.forEach(result => {
-      const [e, file] = result;
-      console.log(e.target.result);
-      // this.props.dispatch(uploadFile(e.target.result));
-      this.setState({
-        imageUrl: e.target.result
-      });
-      console.log(`Successfully uploaded ${file.name}!`);
+  onDrop(files) {
+    this.setState({
+      imageFile: files[0],
+      imageUrl: `/uploads/${files[0].name}`
     });
   }
 
@@ -122,7 +111,6 @@ class NewRecipe extends Component {
     });
 
     // Find index to start numbering our id's
-
     let index = this.props.ingredients.reduce( (a,b) => {
       if (a.id > b.id) { return a; }
       return b;
@@ -139,6 +127,8 @@ class NewRecipe extends Component {
       return;
     }
 
+    // @TODO dispatch an action to upload image
+    this.props.uploadImage(this.state.imageFile);
 
     const newRecipe = { id, name, ingredients, imageUrl };
     this.props.createRecipe(newRecipe);
@@ -156,10 +146,9 @@ class NewRecipe extends Component {
             </FormGroup>
             <FormGroup className="col-sm-12">
               <ControlLabel>image url:</ControlLabel>
-              <FileReaderInput as="binary" id="my-file-input"
-                               onChange={this.imageSet.bind(this)} >
-               <button>Select a file!</button>
-             </FileReaderInput>
+              <Dropzone onDrop={this.onDrop.bind(this)}>
+                <div>Try dropping some files here, or click to select files to upload.</div>
+              </Dropzone>
             </FormGroup>
             <FormGroup className="col-sm-12">
               <ControlLabel>ingredients:</ControlLabel>

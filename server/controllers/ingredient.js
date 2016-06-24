@@ -41,5 +41,5 @@ exports.createIngredients = function(req, res, next) {
   Ingredient.create(req.body, err=> {
     return next(err);
   })
-  res.send(200);
+  res.sendStatus(200);
 }

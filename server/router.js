@@ -1,6 +1,7 @@
 import Recipe from './models/recipe';
 import recipeController from './controllers/recipe';
 import ingredientsController from './controllers/ingredient';
+import uploadsController from './controllers/uploads';
 
 export default function(app) {
   app.get('/', function(req, res) {
@@ -11,4 +12,5 @@ export default function(app) {
   app.delete('/recipes/:id', recipeController.deleteRecipe);
   app.get('/ingredients', ingredientsController.fetchIngredients);
   app.post('/ingredients', ingredientsController.createIngredients);
+  app.post('/uploads', uploadsController.uploadImage);
 }

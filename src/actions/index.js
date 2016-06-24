@@ -7,7 +7,8 @@ import {
   CLEAR_FILTER,
   DELETE_RECIPE,
   CREATE_RECIPE,
-  CREATE_INGREDIENTS
+  CREATE_INGREDIENTS,
+  UPLOAD_IMAGE
 } from './types';
 import { LOAD, SAVE } from 'redux-storage';
 import axios from 'axios';
@@ -74,19 +75,17 @@ export function createRecipe(recipe) {
 }
 
 export function deleteRecipe(id) {
-  if (typeof id !== 'undefined') {
-    return function(dispatch) {
-      axios.delete(`${API_URL}/recipes/${id}`)
-        .then( response => {
-          dispatch( {
-            type: DELETE_RECIPE,
-            payload: id
-          })
+  return function(dispatch) {
+    axios.delete(`${API_URL}/recipes/${id}`)
+      .then( response => {
+        dispatch( {
+          type: DELETE_RECIPE,
+          payload: id
         })
-        .catch(err => {
-          dispatch(err)
-        });
-    }
+      })
+      .catch(err => {
+        dispatch(err)
+      });
   }
 }
 
@@ -115,5 +114,18 @@ export function enterSearchTerm(term) {
   return {
     type: SEARCH_TERM,
     payload: term
+  }
+}
+
+export function uploadImage(image) {
+  console.log(image);
+  return function(dispatch) {
+    axios.post(`${API_URL}/uploads`, {image})
+      .then( response => {
+        dispatch({
+          type: UPLOAD_IMAGE,
+          payload: image
+        })
+      })
   }
 }
