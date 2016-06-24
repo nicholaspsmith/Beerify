@@ -8,6 +8,7 @@ import {
   Button,
   FormControl
 } from 'react-bootstrap';
+import FileReaderInput from 'react-file-reader-input';
 
 class NewRecipe extends Component {
   static contextTypes = {
@@ -79,6 +80,19 @@ class NewRecipe extends Component {
     }
   }
 
+  imageSet(e, results) {
+    e.preventDefault();
+    results.forEach(result => {
+      const [e, file] = result;
+      console.log(e.target.result);
+      // this.props.dispatch(uploadFile(e.target.result));
+      this.setState({
+        imageUrl: e.target.result
+      });
+      console.log(`Successfully uploaded ${file.name}!`);
+    });
+  }
+
   createRecipe(e) {
     e.preventDefault();
 
@@ -142,7 +156,10 @@ class NewRecipe extends Component {
             </FormGroup>
             <FormGroup className="col-sm-12">
               <ControlLabel>image url:</ControlLabel>
-              <FormControl type="text" placeholder="beer.jpg" onChange={this.imageUrlInput.bind(this)} value={this.state.imageUrl}/>
+              <FileReaderInput as="binary" id="my-file-input"
+                               onChange={this.imageSet.bind(this)} >
+               <button>Select a file!</button>
+             </FileReaderInput>
             </FormGroup>
             <FormGroup className="col-sm-12">
               <ControlLabel>ingredients:</ControlLabel>
